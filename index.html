@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<!-- <link rel="stylesheet" href="amazon.css"> -->
+    <head>
+        <meta charset="utf-8">
+        <title>Amazon</title>
+        <style>
+            body{
+                margin: 0;
+                font-family: Montserrat,Source Sans Pro;
+            }
+            header{
+                background-color: #262F3F;
+                height: 100%;
+                max-height: 5rem;
+            }
+            nav{
+                padding: 1.5rem;
+                text-align: center;
+            }
+            nav #logo{
+                width: 4rem;
+                height: 2.5rem;
+            }
+            main{
+                margin: 1rem 8rem;
+                display: flex;
+            }
+            #left{
+                width: 30rem;
+                height: 30rem;
+            }
+            #heart-rate{
+                
+                position: absolute;
+                top: 14rem;
+                left: 17rem;
+                display: none;
+            }
+            #heart{
+                width: 30px;
+                height: 30px;
+                
+            }
+            #rate{
+                color: white;
+            }
+            #watch2{
+                width: 20rem;
+                height: 20rem;
+            }
+            #watch1,#watch3,#watch4{
+                width: 20rem;
+                height: 20rem;
+                display: none;
+            }
+            #ctime{
+                margin: 1rem;
+                color: white;
+                position: fixed;
+                top: 14rem;
+                left: 14rem;
+            }
+            #right{
+                padding-top: 1rem;
+            }
+            #black,#red,#sandal,#brown,#ctime{
+                padding: 0.5em 1.5rem;
+                margin: 0 0.5em;
+                border: none;
+                border-radius: 0.2em;
+
+            }
+            #black{
+                background-color: black;
+            }
+            #red{
+                background-color: #C64221;
+            }
+            #sandal{
+                background-color: #E9C7BE;
+            }
+            #brown{
+                background-color: #885462;
+            }
+            #ctime{
+                margin: 0;
+            }
+            #time,#heartbtn,#buy{
+                padding: 0.5rem;
+                border: 0.5px grey solid;
+                margin: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <img id="logo" src="https://onlinelearning.msmc.edu/wp-content/uploads/2020/03/amazon-com-online-shopping-retail-sales-amazon-logo-thumbnail-300x169.jpg" />
+            </nav>
+        </header>
+        <main >
+            <div id="left">
+                <img src="watch2.png" id="watch1" /> 
+                <img src="watch.png" id="watch2" /> 
+                <img src="watch4.png" id="watch3" /> 
+                <img src="watch5.png" id="watch4" /> 
+                <h3 id="ctime"></h3>
+                <span id="heart-rate"><img id="heart" src="broken.png"><br />
+                <p id="rate">86</p>
+                </span>
+            </div>
+            <div id="right">
+                <h1>The Smart Watch</h1>
+                <p>asdfgf ;lkjhj aasdfgf ;lkjhj asdfgf ;lkjhj aasdfgf ;lkjhj asdfgf ;lkjhj aasdfgf ;lkjhj asdfgf ;lkjhj aasdfgf ;lkjhj asdfgf ;lkjhj aasdfgf ;lkjhj</p><br />
+                <h3>Select Color :</h3>
+                <input id="black" type="button" placeholder="black" />
+                <input id="red" type="button" placeholder="red" />
+                <input id="sandal" type="button" placeholder="blue" />
+                <input id="brown" type="button" placeholder="brown" /><br />
+                <h3>Features :</h3>
+                <button id="time">Timer</button>
+                <button id="heartbtn">Heart beats</button><br /><br /><br />
+                <button id="buy">Buy Now</button>
+            </div>
+        </main>
+    </body>
+    <script >
+        var black= document.getElementById('black');
+        var red = document.getElementById('red');
+        var sandal = document.getElementById('sandal');
+        var brown = document.getElementById('brown');
+
+        var blackimg = document.getElementById('watch1');
+        var redimg = document.getElementById('watch2');
+        var sandalimg = document.getElementById('watch3');
+        var brownimg = document.getElementById('watch4');
+
+
+        function remove() {
+            blackimg.style.display='none';
+            redimg.style.display='none';
+            sandalimg.style.display='none';
+            brownimg.style.display='none';
+        }
+
+        black.addEventListener('click',function() {
+            remove();
+            blackimg.style.display='block';
+        });
+
+        red.addEventListener('click',function() {
+            remove();
+            redimg.style.display='block';
+        });
+        sandal.addEventListener('click',function() {
+            remove();
+            sandalimg.style.display='block';
+        });
+        brown.addEventListener('click',function() {
+            remove();
+            brownimg.style.display='block';
+        });
+
+
+        var timebtn = document.getElementById('time');
+        var ctime = document.getElementById('ctime');
+        var heart= document.getElementById('heartbtn');
+        var heartrate= document.getElementById('heart-rate');
+
+        function showTime() {
+            var date = new Date();
+            
+            var time = date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds();
+            // console.log(time);
+            
+            
+            ctime.innerHTML= time;
+        }
+
+        timebtn.addEventListener('click',function() {
+            heartrate.style.display= 'none';
+            ctime.style.display='block';
+
+            setInterval( showTime, 1000);
+
+        });
+        heart.addEventListener('click', function(){
+            heartrate.style.display= 'block';
+            ctime.style.display='none';
+            console.log("gnbvbvf");
+        });
+    </script>
+</html>
